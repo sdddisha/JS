@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="id01">Old Heading</h1>
+<ul id="instruments">
+    <li>Guitar</li>
+    <li>Piano</li>
+    <li>Drums</li>
+    <li>Violin</li>
+</ul>
+<!-- <button>Add item</button> -->
+<script>
+// const body = document.body;
+// body.append("hello world!");
+// const node=document.createElement('div');
+// node.innerHTML="Hello from create element";
+// //node.textContent="Hello from create element, textContent";
+// body.appendChild(node);
+
+//html nodelist. 
+// const instrumentsList=document.getElementById('instruments');
+// const node=instrumentsList.childNodes
+// console.log(node);
+
+//All browsers return a NodeList object for the property childNodes. 
+//Most browsers return a NodeList object for the method querySelectorAll().
+// const listItems=document.querySelectorAll('li');
+// console.log(listItems);   //returns a nodeList with 4 items. same as below
+
+
+//htmlCollection
+// const listItems=document.getElementsByTagName('li');
+// console.log(listItems);
+
+//Nodelist comes with some inbuilt methods like keys,entries,values, forEach. Examples:
+// for(let i of listItems.values()){
+//     console.log(i);
+// }
+// for(let i of listItems.keys()){
+//     console.log(i);
+// }
+// for(let i of listItems.entries()){
+//     console.log(i);
+// }
+
+//static vs live collections
+//when htmlCollection is used, Length of the list is increased(check console). changes to collection in DOM update collection in JS
+
+// const instrumentsList=document.getElementById('instruments');
+// const listItems=document.getElementsByTagName('li');
+// const button=document.querySelector('button');
+// button.addEventListener('click',()=>{
+//     const li=document.createElement('li')
+//     li.textContent='Trumpet'
+//     instrumentsList.appendChild(li);
+//     console.log(listItems.length);
+// })
+
+// when nodeList is used, Length of the list is not increased (check console). changes to DOM doesnt update JS
+
+// const instrumentsList=document.getElementById('instruments');
+// const listItems=document.querySelectorAll('li');
+// const button=document.querySelector('button');
+// button.addEventListener('click',()=>{
+//     const li=document.createElement('li')
+//     li.textContent='Trumpet'
+//     instrumentsList.appendChild(li);
+//     console.log(listItems.length);
+// })
+//but when we use childnodes in nodeList it does live sharing what above does not do
+// const instrumentsList=document.getElementById('instruments');
+// const listItems=instrumentsList.childNodes
+// const button=document.querySelector('button');
+// button.addEventListener('click',()=>{
+//     const li=document.createElement('li')
+//     li.textContent='Trumpet'
+//     instrumentsList.appendChild(li);
+//     console.log(listItems.length);
+// })
+</script>
+
+
+</body>
+</html> 
